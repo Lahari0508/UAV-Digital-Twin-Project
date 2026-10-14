@@ -24,3 +24,32 @@ https://github.com/yogesh031020/drone-flight-operations-data
 
 ## Implementation Notes
 The repository documents the implementation and its experimental results. The scope of the contextual-bandit, synchronization, and retraining components should be understood from the submitted code and report.
+## Dataset
+
+### Dataset Name
+Drone Flight Operations Data — Autonomous Waypoint Mission.
+
+### Source
+- **GitHub repository:** https://github.com/yogesh031020/drone-flight-operations-data
+- **Direct CSV:** https://raw.githubusercontent.com/yogesh031020/drone-flight-operations-data/main/2024-05-20_Autonomous_Waypoint_Mission.csv
+
+### Dataset Description
+The dataset contains UAV flight telemetry recorded during an autonomous waypoint mission. The repository describes telemetry fields such as mission time, GPS coordinates, altitude, velocity, speed, and battery level.
+
+### Loading the Dataset
+The CSV can be loaded in Python using pandas:
+
+```python
+import pandas as pd
+
+url = "https://raw.githubusercontent.com/yogesh031020/drone-flight-operations-data/main/2024-05-20_Autonomous_Waypoint_Mission.csv"
+df = pd.read_csv(url)
+
+print(df.shape)
+print(df.head())
+```
+
+### Role in This Project
+The telemetry is used for dataset exploration and the speed-prediction demonstration, according to the features and target defined in the implementation notebook.
+
+**Limitation:** This CSV is not a labelled multi-UAV synchronization dataset. The UAV arrival-time synchronization experiment should be identified separately as a simulation unless validated multi-UAV data is available.
